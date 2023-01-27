@@ -1,26 +1,48 @@
 import React, {useState } from "react";
+import Slider from "react-slick";
 import logo from '../../assets/logo.svg'
-import { Container, Search } from "./styles";
+import { Container, Search, Logo, Wrapper, Map, CorouselTitle, Carousel } from "./styles";
 import TextField, {Input} from '@material/react-text-field';
+import MaterialIcon from '@material/react-material-icon';
+import restaurante from '../../assets/restaurante-fake.png'
+import { Card } from "../../components";
 
 const Home = () => {
 
     const [inputValue, setinputValue] = useState('');
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      adaptiveHeight: true,
+    };
 
     return (
-        <Container>
-        <Search><img src={logo} alt="Logo do restaurante"/>
+      <Wrapper>
+         <Container>
+        <Search><Logo src={logo} alt="Logo do restaurante"/>
         <TextField
-          label='Pesquisar'
+          label='Pesquisar Restaurantes'
           outlined
-          //onTrailingIconSelect={() => this.setState({value: ''})}
-          //trailingIcon={<MaterialIcon role="button" icon="delete"/>}
+          trailingIcon={<MaterialIcon role="button" icon="search"/>}
         ><Input
            value={inputValue}
            onChange={(e) => setinputValue(e.target.value)} />
         </TextField>
+        <CorouselTitle>Na Sua Área</CorouselTitle>
+        <Carousel {...settings}>
+          <Card photo={restaurante}/>
+          <Card photo={restaurante}/>
+          <Card photo={restaurante}/>
+          <Card photo={restaurante}/>
+          <Card photo={restaurante}/>
+        </Carousel>
         </Search>
     </Container>
+    <Map/>
+      </Wrapper>
     )
 };
 
