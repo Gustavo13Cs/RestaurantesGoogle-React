@@ -6,3 +6,11 @@ export const Container = styled.aside`
  height: 100vh;
  overflow-y: auto; //faz os itens quando estourar a caixa serem redimensionados
 `;
+
+export const Search = styled.section `
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ background-color: #ffffff;
+ padding: 16px;
+`;
