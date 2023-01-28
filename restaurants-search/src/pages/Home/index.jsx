@@ -33,11 +33,13 @@ const Home = () => {
         </TextField>
         <CorouselTitle>Na Sua Área</CorouselTitle>
         <Carousel {...settings}>
-          <Card photo={restaurante}/>
-          <Card photo={restaurante}/>
-          <Card photo={restaurante}/>
-          <Card photo={restaurante}/>
-          <Card photo={restaurante}/>
+          <Card photo={restaurante} title="nome sla"/>
+          <Card photo={restaurante} title="nome sla"/>
+          <Card photo={restaurante} title="nome sla"/>
+          <Card photo={restaurante} title="nome sla"/>
+          <Card photo={restaurante} title="nome sla"/>
+          <Card photo={restaurante} title="nome sla"/>
+          <Card photo={restaurante} title="nome sla"/>
         </Carousel>
         </Search>
     </Container>
