@@ -10,7 +10,7 @@ import { Card, RestaurantCard, Modal  } from "../../components";
 const Home = () => {
 
     const [inputValue, setinputValue] = useState('');
-    const [modalOpened, setModalOpened] = useState(false);
+    const [modalOpened, setModalOpened] = useState(true);
     const settings = {
       dots: false,
       infinite: true,
@@ -42,7 +42,6 @@ const Home = () => {
           <Card photo={restaurante} title="nome sla"/>
           <Card photo={restaurante} title="nome sla"/>
         </Carousel>
-        <button onClick={() => setModalOpened(true)}>Abrir modal</button>
         </Search>
         <RestaurantCard/>
     </Container>
