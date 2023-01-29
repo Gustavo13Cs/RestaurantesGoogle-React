@@ -12,14 +12,14 @@ const Modal = ({children, open, onClose }) => {
         onClose();
     }
 
-    function onDiaLogClick() {
-
+    function onDiaLogClick(e) {
+        e.stopPropagation();
     }
 
     return (
         <Portal>
          <Overlay onClick={onOverlayClick}>
-            <Dialog>{children}</Dialog>
+            <Dialog onClick={onDiaLogClick }>{children}</Dialog>
          </Overlay>
         </Portal>
     );

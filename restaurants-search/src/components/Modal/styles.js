@@ -13,7 +13,7 @@ export const Overlay = styled.div `
  width: 100%;
  height: 100%;
 
- background: rgba(78, 89, 131, 0.5);
+ background-color: rgba(78, 89, 131, 0.5);
  backdrop-filter: blur(5px);
 
  z-index: 999; 
