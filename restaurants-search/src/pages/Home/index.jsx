@@ -46,7 +46,6 @@ const Home = () => {
         <RestaurantCard/>
     </Container>
     <Map/>
-
       </Wrapper>
     )
 };
