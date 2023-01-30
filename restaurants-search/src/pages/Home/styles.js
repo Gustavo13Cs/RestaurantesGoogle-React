@@ -26,7 +26,7 @@ export const Logo = styled.img `
  margin-bottom: 15px;
 `
 
-export const Map = styled.div `
+export const Mapa = styled.div `
  background-color: red;
  width: 500px;
 `
