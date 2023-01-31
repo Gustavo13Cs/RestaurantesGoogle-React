@@ -11,6 +11,9 @@ const Home = () => {
 
     const [inputValue, setinputValue] = useState('');
     const [modalOpened, setModalOpened] = useState(true);
+    const [query, setquery] = useState(null);
+
+
     const settings = {
       dots: false,
       infinite: true,
@@ -20,6 +23,11 @@ const Home = () => {
       adaptiveHeight: true,
     };
 
+    function handleKeyPress(e) {
+      if(e.key == 'Enter') {
+        setquery(inputValue);
+      }
+    }
     return (
       <Wrapper>
          <Container>
@@ -28,9 +36,7 @@ const Home = () => {
           label='Pesquisar Restaurantes'
           outlined
           trailingIcon={<MaterialIcon role="button" icon="search"/>}
-        ><Input
-           value={inputValue}
-           onChange={(e) => setinputValue(e.target.value)} />
+        ><Input value={inputValue} onKeyPress={handleKeyPress}  onChange={(e) => setinputValue(e.target.value)} />
         </TextField>
         <CorouselTitle>Na Sua Área</CorouselTitle>
         <Carousel {...settings}>
@@ -45,7 +51,7 @@ const Home = () => {
         </Search>
         <RestaurantCard/>
     </Container>
-    <Map/>
+    <Map query={query}/>
       </Wrapper>
     )
 };
