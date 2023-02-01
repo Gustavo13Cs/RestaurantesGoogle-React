@@ -6,12 +6,14 @@ import TextField, {Input} from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 import restaurante from '../../assets/restaurante-fake.png'
 import { Card, RestaurantCard, Modal,Map} from "../../components";
+import { useSelector } from "react-redux";
 
 const Home = () => {
 
     const [inputValue, setinputValue] = useState('');
     const [modalOpened, setModalOpened] = useState(true);
     const [query, setquery] = useState(null);
+    const {restaurants} = useSelector((state) => state.restaurants); // serve para pegar um componente de outro lugar da aplicação
 
 
     const settings = {
@@ -40,16 +42,17 @@ const Home = () => {
         </TextField>
         <CorouselTitle>Na Sua Área</CorouselTitle>
         <Carousel {...settings}>
-          <Card photo={restaurante} title="nome sla"/>
-          <Card photo={restaurante} title="nome sla"/>
-          <Card photo={restaurante} title="nome sla"/>
-          <Card photo={restaurante} title="nome sla"/>
-          <Card photo={restaurante} title="nome sla"/>
-          <Card photo={restaurante} title="nome sla"/>
-          <Card photo={restaurante} title="nome sla"/>
+          {restaurants.map((restaurant) => 
+          <Card 
+          key={restaurant.place_id}
+          photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}
+          title={restaurant.name}
+          />)}
         </Carousel>
         </Search>
-        <RestaurantCard/>
+        {restaurants.map((restaurant) => (
+          <RestaurantCard restaurant={restaurant} />
+        ))}
     </Container>
     <Map query={query}/>
       </Wrapper>
