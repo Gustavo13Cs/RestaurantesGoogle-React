@@ -44,7 +44,7 @@ const Home = () => {
          <Container>
             <Search><Logo src={logo} alt="Logo do restaurante"/>
             <TextField
-              label='Pesquisar Restaurantes'
+              label='Pesquisar Locais'
               outlined
               trailingIcon={<MaterialIcon role="button" icon="search"/>}
             ><Input value={inputValue} onKeyPress={handleKeyPress}  onChange={(e) => setinputValue(e.target.value)} />
