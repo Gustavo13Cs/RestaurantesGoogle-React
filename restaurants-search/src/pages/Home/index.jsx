@@ -50,13 +50,14 @@ const Home = () => {
             ><Input value={inputValue} onKeyPress={handleKeyPress}  onChange={(e) => setinputValue(e.target.value)} />
             </TextField>
             <CorouselTitle>Na Sua Área</CorouselTitle>
-            <Carousel {...settings}>
+            <Carousel { ...settings}>
               {restaurants.map((restaurant) => (
-              <Card 
-              key={restaurant.place_id}
-              photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}
-              title={restaurant.name}
-              />))}
+                <Card 
+                key={restaurant.place_id}
+                photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante} 
+                title={restaurant.name}
+                />
+              ))}
             </Carousel>
             </Search>
             {restaurants.map((restaurant) => (
