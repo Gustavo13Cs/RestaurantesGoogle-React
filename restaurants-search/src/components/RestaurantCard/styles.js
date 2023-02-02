@@ -37,9 +37,10 @@ margin-bottom: 10px;
 margin-top: 10px
 `;
 
-export const RestaurantPhoto = styled.img `
+export const RestaurantPhoto = styled.img`
+ display: ${(props) => (props.imageLoaded ? 'block' : 'none')};
  width: 100px;
  height: 100px;
+ object-fit: cover; //para a imagem ficar mais porpocional
  border-radius: 6px;
- object-fit: cover; // para a imagem n ficar esticada
 `;
