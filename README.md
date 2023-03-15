@@ -1,6 +1,5 @@
 # RestaurantesGoogle-React
 
-## [Veja Mais](https://bucolic-dasik-230b30.netlify.app/)
 ### Site para pesquisas, usando APIs do google 
 
 - Projeto pessoal usando HTML CSS,JavaScript & React
